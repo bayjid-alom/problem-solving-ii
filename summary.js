@@ -87,3 +87,32 @@ function findTallest(numbers) {
 const heights = [65, 66, 68, 72, 78, 60, 67, 80];
 const tallest = findTallest(heights);
 console.log("Tallest number of the array :", tallest)
+
+
+
+console.log("✅ Calculate________Wood______Requirements");
+
+/**
+ # Chair --> 3 cft (cubic feet)
+ # table --> 10 cft
+ # bed --> 50 cft
+ */
+
+function woodQuantity(chairQuantity, tableQuantity, bedQuantity) {
+    const perChairWood = 3;
+    const perTableWood = 10;
+    const perBedWood = 50;
+
+    const chairTotalWood = chairQuantity * perChairWood;
+    const tableTotalWood = tableQuantity * perTableWood;
+    const bedTotalWood = bedQuantity * perBedWood;
+
+    const totalWood = chairTotalWood + tableTotalWood + bedTotalWood;
+    return totalWood;
+}
+
+const furnitures = woodQuantity(6, 3, 4);
+console.log("Total  Wood :", furnitures)
+console.log("Total Wood Needed :", woodQuantity(2, 1, 1))
+
+
