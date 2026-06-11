@@ -118,7 +118,6 @@ const min = getMin(prices)
 console.log("Cheapest one is :", min)
 
 
-
 // Some tricky
 // বিঃদ্রঃ এখানে আমরা মোবাইলের নেইমের মধ্যে তুলনা করতে পারবো না , তুলনা করার জন্য ডট নোটেশন দিয়ে মোবাইলের প্রাইজের সাথে তুলনা করতে হবে।
 
@@ -146,3 +145,49 @@ function getCheapestPhone(phones) {
 
 const cheap = getCheapestPhone(mobiles);
 console.log("Cheapest Phone is :", cheap)
+
+
+
+
+console.log("✅ Calculate_______product_____total cost of products.");
+
+const products = [
+    { name: "Shapoo", price: 300, quantity: 5 },
+    { name: "Shirt", price: 600, quantity: 2 },
+    { name: "Pant", price: 700, quantity: 3 },
+    { name: "Shoes", price: 1200, quantity: 1 }
+]
+
+function shoppingTotal(products) {
+
+    let total = 0;
+    for (const product of products) {
+        total = total + product.price;
+    }
+
+    return total;
+}
+
+const total = shoppingTotal(products);
+console.log("Total Cost (Without quantity) :", total)
+
+
+function cartTotal(products) {
+
+    let total = 0;
+    for (const product of products) {
+
+        const thisProductCost = product.price * product.quantity;
+        total = total + thisProductCost;
+    }
+
+    return total;
+}
+
+const shoppingCost = cartTotal(products);
+console.log("Total Cost (With quantity) :", shoppingCost)   // 
+
+
+
+console.log("✅ Advanced_______multi____layer discount price.");
+
