@@ -53,23 +53,6 @@ console.log("Maximum is :", maximum);
 
 console.log("✅ Tallest________number_______in an array");
 
-function vowesCount(lines) {
-
-    const words = lines.split("")
-    let count = 0;
-
-    for (let letter of words) {
-        if (letter === "a" || letter === "e" || letter === "i" || letter === "o" || letter === "u" || letter === "A" || letter === "E" || letter === "I" || letter === "O" || letter === "U") {
-            count++;
-        }
-    }
-    return count;
-}
-
-const str = vowesCount("I am learning web Programming")
-console.log("Vowel total: ", str)
-
-
 // Tallest find out :
 
 function findTallest(numbers) {
@@ -116,3 +99,50 @@ console.log("Total  Wood :", furnitures)
 console.log("Total Wood Needed :", woodQuantity(2, 1, 1))
 
 
+
+console.log("✅ Cheapest_______Phone____from an array of phone objects");
+// array of array / array of object?
+function getMin(numbers) {
+
+    let cheapest = numbers[0];
+    for (const number of numbers) {
+        if (number < cheapest) {
+            cheapest = number;
+        }
+    }
+    return cheapest;
+}
+
+const prices = [20000, 15000, 50000, 19000, 75000, 85000];
+const min = getMin(prices)
+console.log("Cheapest one is :", min)
+
+
+
+// Some tricky
+// বিঃদ্রঃ এখানে আমরা মোবাইলের নেইমের মধ্যে তুলনা করতে পারবো না , তুলনা করার জন্য ডট নোটেশন দিয়ে মোবাইলের প্রাইজের সাথে তুলনা করতে হবে।
+
+
+const mobiles = [
+    { name: "Samsung", price: 20000, camera: "12MP", color: "black" },
+    { name: "Xiaomi", price: 15000, camera: "12MP", color: "black" },
+    { name: "Oppo", price: 27000, camera: "12MP", color: "black" },
+    { name: "iPhone", price: 120000, camera: "12MP", color: "black" },
+    { name: "Walton", price: 14500, camera: "12MP", color: "black" },
+    { name: "HTC", price: 37000, camera: "12MP", color: "black" },
+    { name: "Huawei", price: 45000, camera: "12MP", color: "black" }
+]
+
+function getCheapestPhone(phones) {
+
+    let minimum = phones[0];
+    for (const phone of phones) {
+        if (phone.price < minimum.price) {  // প্রধান লাইন
+            minimum = phone;
+        }
+    }
+    return minimum;
+}
+
+const cheap = getCheapestPhone(mobiles);
+console.log("Cheapest Phone is :", cheap)
