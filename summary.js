@@ -253,3 +253,162 @@ const layer_total = layerDiscountedPrice(190);
 console.log("Layer Discounted Price :", layer_total)
 
 
+
+console.log("✅ Call_______function_________inside a function");
+
+// # এটা আবার প্রাক্টিস করতে হবে ।
+
+function add(num1, num2) {
+    return num1 + num2;
+}
+
+function subtract(num1, num2) {
+    return num1 - num2;
+}
+function multiply(num1, num2) {
+    return num1 * num2;
+}
+
+function divide(num1, num2) {
+    return num1 / num2;
+}
+
+function calculator(a, b, operation) {
+    if (operation === "add") {
+        const result = add(a, b);
+        return result;
+    }
+
+    else if (operation === "subtract") {
+        const result = subtract(a, b);
+        return result;
+    }
+    else if (operation === "divide") {
+        const result = divide(a, b);
+        return result;
+    }
+    else if (operation === "multiply") {
+        const result = multiply(a, b);
+        return result;
+    }
+
+    else {
+        return "Only 'add', 'subtract' , 'multiply', 'divide' operation is allowed."
+    }
+}
+
+const result_1 = calculator(10, 5, 'add');
+const result_2 = calculator(10, 5, 'subtract');
+const result_3 = calculator(10, 5, 'multiply');
+const result_4 = calculator(10, 5, 'divide');
+console.log("Add:", result_1, "Subtract:", result_2, "Multiply:", result_3, "Divide:", result_4)
+
+
+
+
+console.log("✅ Handle______Unexpected_____function input parameter Error");
+
+/****
+ # Validation
+ ****/
+// 01. Number Checking :
+
+function multiply_(num1, num2) {
+    if (typeof num1 !== 'number' || typeof num2 !== 'number') {   // প্রধান লাইন
+        return "Please provide a number."
+    }
+    const mult = num1 * num2;
+    return mult;
+}
+
+
+const result__1 = multiply_(20, 5)
+console.log(result__1)
+
+const result__2 = multiply_(20 + 5, 2 + 3)
+console.log(result__2)
+
+// কি করতে হবে NaN ফিক্স করতে?
+const result__3 = multiply_(5, 'seven');
+console.log(result__3)  // NaN
+
+
+
+
+
+// 02. String checking :
+
+function fullName(first, second) {
+    if (typeof first !== 'string') {
+        return "First name should be a string❗"
+    }
+    else if (typeof second !== 'string') {
+        return "Second name should be a string❗"
+    }
+    const full = first + ' ' + second;
+    return full;
+}
+
+const full_1 = fullName('Bayjid', 'Alom')
+const full_2 = fullName('Bayjid', 18)
+// এটা এরর দিবে না , কিন্তু আমি string এর সাথে number চাই না.
+// Only string allow?
+
+console.log("Fullname O/P:(1) :", full_1)
+console.log("Fullname O/P:(2) :", full_2)
+
+
+
+
+
+// 03. Object checking :
+
+function getPrice(product) {
+    // console.log(typeof product)   // object
+    if (typeof product !== 'object') {
+        return "Please provide an array❗"
+    }
+    const price = product.price;
+    return price;
+}
+const price = getPrice({ name: "ruller", price: 100, color: 'red' })
+console.log(price)
+
+
+
+
+// 04. Array Checking :  Array.isArray()
+// Check : if it is not  an arry ---
+
+function getSecond(numbers) {
+    console.log("Is array ? ", Array.isArray(numbers))
+
+    if (Array.isArray(numbers) === false) {
+        return "Please provide an array [❗]"
+    }
+
+    console.log(typeof numbers);
+    const second = numbers[1];
+    return second;
+}
+
+const second = getSecond([10, 20, 30]);
+console.log("Index [1] >", second)
+
+
+
+
+console.log("✅ Summary________&____Practice Tasks");
+
+/**** Fundamental Topics :
+ * 01. variable
+ * 02. Condition
+ * 03. Array
+ * 04. Loop
+ * 05. Object
+ * 06. Function
+ * 
+ * 
+ *  # Practice more....
+ *  # 
+ */
