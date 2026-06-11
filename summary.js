@@ -189,5 +189,67 @@ console.log("Total Cost (With quantity) :", shoppingCost)   //
 
 
 
-console.log("✅ Advanced_______multi____layer discount price.");
+console.log("✅ (Advanced}_______multi____layer discount price.");
+
+/**** Normal Discount :
+ upto 100: --> 100
+ more than 101-200 --> 90
+ more than 200 : --> 70
+ ****/
+
+function discountedPrice(quantity) {
+    if (quantity <= 100) {
+        const total = quantity * 100;
+        return total;
+    }
+    else if (quantity <= 200) {
+        const total = quantity * 90;
+        return total;
+    }
+    else {
+        const total = quantity * 70;
+        return total;
+    }
+
+}
+
+const total_ = discountedPrice(150);
+console.log("Discount :", total)
+
+
+/**** Layer discount :
+ first 100 --> 100 Tk
+ 101 - 200 --> 90 Tk
+ Above 200 --> 70 Tk
+ ****/
+
+function layerDiscountedPrice(quantity) {
+    const first_100_price = 100;
+    const second_100_price = 90;
+    const above_200_price = 70;
+
+    if (quantity <= 100) {
+        const total = quantity * first_100_price;
+        return total;
+    }
+    else if (quantity <= 200) {
+        const first_100_Total = 100 * first_100_price;
+        const remainingQuantity = quantity - 100;
+        const remainingTotal = remainingQuantity * 90;
+        const total = first_100_Total + remainingTotal;
+        return total;
+    }
+    else {
+        const first_100_Total = 100 * first_100_price;
+        const second_100_Total = 100 * second_100_price;
+        const remainingQuantity = quantity - 200;
+        const remainingTotal = quantity * above_200_price;
+        const total = first_100_Total + second_100_Total + remainingTotal;
+        return total;
+    }
+}
+
+const layer_total = layerDiscountedPrice(190);
+console.log("Layer Discounted Price :", layer_total)
+
 
